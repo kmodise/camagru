@@ -22,15 +22,11 @@ class createuser{
         $stmt->bindParam(":username", $this->uname);  echo 'c';
         $stmt->bindParam(":fullname", $this->name);  echo 'd';
         $stmt->bindParam(":email", $this->email);  echo 'e';
-        $stmt->bindParam(":passwd", hash("md5",$this->passw)); echo 'f'; 
+        $stmt->bindParam(":passwd", $this->passw); echo 'f'; 
         $stmt->execute(); echo 'g';
         $vkey = md5(time());
-        $sql = 'UPDATE users SET vkey=:vkey WHERE email=:email';
-        $stmt = $this->conns->prepare($sql);
-        $stmt->bindParam(":vkey", $vkey);
-        $stmt->bindParam(":email", $this->email);
-        $stmt->execute();
-
+        mail("$this->email","confirmation","<a href=http://localhost:8080/damn/email_verify.php?vkey=$vkey>click</a>","From: camagru@camagru.com");
+        header("location: message.php");
         echo "qwe";
     }
     public function __destruct(){

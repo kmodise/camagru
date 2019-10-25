@@ -64,7 +64,7 @@
                     $sql = 'SELECT * FROM users WHERE username = :uname && passwd = :passwd;';
                     $stmt = $this->conns->prepare($sql);
                     $stmt->bindParam(":uname", $uname);
-                    $stmt->bindParam(":passwd", hash("md5",$passwd));
+                    $stmt->bindParam(":passwd", $passwd);
                     $stmt->execute();
                     $rot = $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     if (count($stmt->fetchAll()))
@@ -79,7 +79,7 @@
                     $sql = 'SELECT * FROM users WHERE email = :uname && passwd = :passwd;';
                     $stmt = $this->conns->prepare($sql);
                     $stmt->bindParam(":uname", $uname);
-                    $stmt->bindParam(":passwd", hash("md5",$passwd));
+                    $stmt->bindParam(":passwd", $passwd);
                     $stmt->execute();
                     $rot = $stmt->setFetchMode(PDO::FETCH_ASSOC);
                     if (count($stmt->fetchAll()))

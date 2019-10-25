@@ -9,9 +9,7 @@ if ($retrive["email"] && $retrive["name"] && $retrive["username"] && $retrive["p
     if ($va->test_email($retrive['email']) && $va->test_password($retrive['password']) && $va->test_user($retrive['username']))
     {
         $var = new createuser($retrive["email"], $retrive["name"], $retrive["username"], $retrive["password"]);
-        echo "fuy";
         $var->add_user();echo "you";
-        header("location: Login.php");
     }
 }
 ?>

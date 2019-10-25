@@ -44,7 +44,7 @@ include('./val.php');
             </div>
         </div>
         <div class="box-2">
-            <p>Don't have an account? <a href="Register.html">Sign up</a></p>
+            <p>Don't have an account? <a href="Register.php">Sign up</a></p>
         </div>
     </div>
 
