@@ -24,6 +24,10 @@ class createuser{
         $stmt->bindParam(":email", $this->email);  echo 'e';
         $stmt->bindParam(":passwd", hash("md5",$this->passw)); echo 'f'; 
         $stmt->execute(); echo 'g';
+        $sql = 'UPDATE users SET vkey="nice" WHERE userid=2';
+        $stmt = $this->conns->prepare($sql);
+        $stmt->execute();
+
         echo "qwe";
     }
     public function __destruct(){
