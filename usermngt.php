@@ -1,6 +1,7 @@
 <?php
 // $ccc = New dbhandler extends dbhandler();
 // $ccc->connect();
+include("send_mail.php");
 class createuser{
     private $email;
     private $name;
@@ -25,7 +26,8 @@ class createuser{
         $stmt->bindParam(":passwd", $this->passw); echo 'f'; 
         $stmt->execute(); echo 'g';
         $vkey = md5(time());
-        mail("$this->email","confirmation","<a href=http://localhost:8080/damn/email_verify.php?vkey=$vkey>click</a>","From: camagru@camagru.com");
+        $mail = new send_mail("$this->email","confirmation","<a href=http://localhost:8080/damn/email_verify.php?vkey=$vkey>click</a>");
+        $mail->send_mail();
         header("location: message.php");
         echo "qwe";
     }
