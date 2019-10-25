@@ -1,11 +1,10 @@
 <?php
-include("connect.php");
-    $sql = "CREATE TABLE IF NOT EXISTS users (id INT(10) AUTO_INCREMENT PRIMARY KEY,
-    usename VARCHAR(10) NOT NULL,
-    fullname VARCHAR(15) NOT NULL,
-    email VARCHAR(15) NOT NULL,
-    passwd VARCHAR(10) NOT NULL,
-    vkey VARCHAR(50) NOT NULL,
-    verified INT(1) DEFAULT(0) NOT NULL)";
-    $conn->exec($sql);
+//include("connection.php");
+CREATE TABLE IF NOT EXISTS users(
+    userid  INT(10) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    fullname VARCHAR(50),
+    email VARCHAR(50),
+    passwd VARCHAR(50))
+    //$conn->execute();
 ?>

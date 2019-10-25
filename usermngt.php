@@ -17,13 +17,13 @@ class createuser{
         $this->passw = $passw;
     }    
     public function add_user(){
-        $sql = 'INSERT INTO users (username, fullname, email, passwd) VALUES (:username, :fullname, :email, :passwd)';
-        $stmt = $this->conns->prepare($sql);
-        $stmt->bindParam(":username", $this->uname);
-        $stmt->bindParam(":fullname", $this->name);
-        $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":passwd", hash("md5",$this->passw));
-        $stmt->execute();
+        $sql = 'INSERT INTO users(username, fullname, email, passwd) VALUES (:username, :fullname, :email, :passwd)'; echo 'a';
+        $stmt = $this->conns->prepare($sql); echo 'b';
+        $stmt->bindParam(":username", $this->uname);  echo 'c';
+        $stmt->bindParam(":fullname", $this->name);  echo 'd';
+        $stmt->bindParam(":email", $this->email);  echo 'e';
+        $stmt->bindParam(":passwd", hash("md5",$this->passw)); echo 'f'; 
+        $stmt->execute(); echo 'g';
         echo "qwe";
     }
     public function __destruct(){
