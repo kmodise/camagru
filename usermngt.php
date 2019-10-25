@@ -24,8 +24,11 @@ class createuser{
         $stmt->bindParam(":email", $this->email);  echo 'e';
         $stmt->bindParam(":passwd", hash("md5",$this->passw)); echo 'f'; 
         $stmt->execute(); echo 'g';
-        $sql = 'UPDATE users SET vkey="nice" WHERE userid=2';
+        $vkey = md5(time());
+        $sql = 'UPDATE users SET vkey=:vkey WHERE email=:email';
         $stmt = $this->conns->prepare($sql);
+        $stmt->bindParam(":vkey", $vkey);
+        $stmt->bindParam(":email", $this->email);
         $stmt->execute();
 
         echo "qwe";
