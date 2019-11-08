@@ -8,8 +8,14 @@ if ($retrive["email"] && $retrive["name"] && $retrive["username"] && $retrive["p
     $va = new va();
     if ($va->test_email($retrive['email']) && $va->test_password($retrive['password']) && $va->test_user($retrive['username']))
     {
+        echo "f";
         $var = new createuser($retrive["email"], $retrive["name"], $retrive["username"], $retrive["password"]);
-        $var->add_user();echo "you";
+        $var->tbuser();
+        $var->add_user();
+        // header("location: Login.php");
+    }
+    else {
+        echo "Username or Email already exist!";
     }
 }
 ?>
@@ -47,7 +53,7 @@ if ($retrive["email"] && $retrive["name"] && $retrive["username"] && $retrive["p
             </div>
         </div>
         <div class="box-2">
-            <p>Have an account? <a href="Login.html">Login</a></p>
+            <p>Have an account? <a href="Login.php">Login</a></p>
         </div>
     </div>
 

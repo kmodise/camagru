@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./val.php');
     $retrive = array();
     $not_val = "";
@@ -7,7 +8,15 @@ include('./val.php');
     if ($retrive["username"] && $retrive["password"] && $retrive["submit"]) {
         $va = new va();
         if ($va->valid_login($retrive['username'], $retrive['password'])){
-            header("location: contents.php");
+            if ($va->email_verified($retrive['username'])){
+                $_SESSION['userid'] = $retrive["username"];
+                $_SESSION['pwd'] = $retrive['password'];
+                $_SESSION['email'] = $retrive['email'];
+                $_SESSION['name'] = $retrive['fullname'];
+                header("location: index.php");
+            }      
+            else
+                echo "confirm account first";
         }
         else{
             $not_val = "incorect username or password";
@@ -34,7 +43,7 @@ include('./val.php');
             <div class="form_reg"> 
                 <div><?php echo $not_val;?></div>
                 <form method="POST">
-                    <p><input type="text" name="username" placeholder="Username or Email" id="username" required></p>
+                    <p><input type="text" name="username" placeholder="Username" id="username" required></p>
                     <p><input type="password" name="password" id="password" placeholder="Password" required></p>
                     <p> <input type="submit" value="Login" name="submit" id="submit"></p>
                 </form>
