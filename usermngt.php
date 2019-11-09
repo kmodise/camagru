@@ -33,7 +33,7 @@ class createuser{
         $stmt->bindParam(":vkey", $vkey);  echo 'c';
         $stmt->bindParam(":username", $this->uname);
         $stmt->execute(); echo 'g';
-        header("location: message/message.php");
+        header("location: messages/message.php");
         echo "qwe";
     }
     public function tbuser()

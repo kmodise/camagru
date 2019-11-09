@@ -51,7 +51,7 @@ include('validation.php');
                 </form>
             </div>
             <div>
-                <p> <a href="forgotPass.php"> <font color="purple" forgot password</a></p>
+                <p> <a href="forgotPass.php"> <font color="purple" >forgot password</font></a></p>
             </div>
         </div>
         <div>
