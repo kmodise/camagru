@@ -1,4 +1,5 @@
 <?php
+//ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
     $retrive = array();
     foreach($_POST as $key => $value)
         $retrive[$key] = $value;
@@ -10,10 +11,10 @@
         fwrite($fp, $decodedData);
         fclose($fp);
         switch($retrive['rad']){
-            case "bat":
+            case "eyes":
                 
                 $image1 = 'canvas.jpeg';
-                $image2 = './stikers/bat.png';
+                $image2 = './stikers/eyes.png';
 
                 list($width, $height) = getimagesize($image2);
 
@@ -26,13 +27,13 @@
                 $data = file_get_contents('merge.png');
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
-                include_once('./picdb.php');
+                include_once('pictures_functions.php');
                 $as = new picdb();
                 $as->tempsave($base64);             
                 break;
-            case "glass":
+            case "shit":
                 $image1 = 'canvas.jpeg';
-                $image2 = './stikers/glass.png';
+                $image2 = './stikers/shit.png';
 
                 list($width, $height) = getimagesize($image2);
 
@@ -45,13 +46,13 @@
                 $data = file_get_contents('merge.png');
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
-                include_once('./picdb.php');
+                include_once('pictures_functions.php');
                 $as = new picdb();
                 $as->tempsave($base64);                 
                 break;
-            case "tree":
+            case "lol":
                 $image1 = 'canvas.jpeg';
-                $image2 = './stikers/tree.png';
+                $image2 = './stikers/lol.png';
 
                 list($width, $height) = getimagesize($image2);
 
@@ -64,12 +65,12 @@
                 $data = file_get_contents('merge.png');
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
-                include_once('./picdb.php');
+                include_once('pictures_functions.php');
                 $as = new picdb();
                 $as->tempsave($base64);                 
                 break;
             default:
-                include_once('./picdb.php');
+                include_once('pictures_functions.php');
                 $as = new picdb();
                 $as->tempsave($retrive['image']);
         }

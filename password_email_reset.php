@@ -1,5 +1,5 @@
 <?php
-    include("val.php");
+    include("validation.php");
     include("send_mail.php");
     include("connection.php");
     if($_POST['submit']){
@@ -17,7 +17,7 @@
                 $stmt->bindParam(":vkey", $vkey);  echo 'c';
                 $stmt->bindParam(":email", $email);
                 $stmt->execute(); echo 'g';
-                header("location: passMessage.php");
+                header("location: messages/passMessage.php");
             }
            else{
                echo "email not registered";

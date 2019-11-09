@@ -3,11 +3,11 @@
 ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
     session_start();
     include("nev.php");
-    include("val.php");
+    include("validation.php");
     include("usermngt.php");
     if (!$_SESSION['userid'])
         header('location:login.php');
-    $va = new va();
+    $va = new validation();
     $id = $va->get_user($_SESSION['userid']);
     if(isset($_POST['submitdelete']))
     {
@@ -30,11 +30,11 @@ ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_report
 <body>
     <div>
         <?php
-            $var = new va;
+            $var = new validation;
             $id = $var->get_user($_SESSION['userid']);
             $uid = $id[0]['userid'];
            
-            include_once('./picdb.php');
+            include_once('pictures_functions.php');
             $arr = new picdb();
             $display = $arr->getalluser($uid);
           

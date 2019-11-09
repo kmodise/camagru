@@ -1,12 +1,12 @@
 <?php
 //remove when doe or before marking
-// ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+//  ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
     session_start();
-    include_once('val.php');
-    include_once('picpro.php');
+    include_once('validation.php');
+    include_once('cam_sticker_merge.php');
     if (!$_SESSION['userid'])
         header('Location: login.php');
-    $bar = new va;
+    $bar = new validation;
     $id = $bar->get_user($_SESSION['userid']);
     $uid = $id[0]['userid'];
     if ($_POST['ims'])
@@ -39,9 +39,9 @@
                 <input type="hidden" value="" id="image" name="image">
             <div class="controller">
                 <button id="snap" type="submit">Capture</button>
-                bat<input type="radio" id="rad" name="rad" value="bat">
-                glass<input type="radio" id="rad" name="rad" value="glass">
-                tree<input type="radio" id="rad" name="rad" value="tree">
+                eyes<input type="radio" id="rad" name="rad" value="eyes">
+                shit<input type="radio" id="rad" name="rad" value="shit">
+                lol<input type="radio" id="rad" name="rad" value="lol">
             </div>
 
             <canvas id="canvas" width="450" height="450" style="float:left;"></canvas>
@@ -50,7 +50,7 @@
     <div style="float: right; width: 400px; hight: auto;">
         <form action="cam.php" method="post">
         <?php
-            include_once('./picdb.php');
+            include_once('pictures_functions.php');
             $arr = new picdb();
             $display = $arr->getsave();
             $i = 0;

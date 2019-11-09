@@ -1,5 +1,5 @@
 <?php
-    class va{
+    class validation{
         private $conns;
         public function __construct()
         {

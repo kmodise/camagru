@@ -4,9 +4,9 @@
 
     session_start();
     include('./usermngt.php');
-    include('./val.php');
+    include('./validation.php');
 
-    $va = new va();
+    $va = new validation();
     $id = $va->get_user($_SESSION['userid']);
     if ($_SESSION['userid']){ 
         echo 'You are logged in as ' .$id[0]['username'] .'<br>';
@@ -101,7 +101,7 @@
                 echo "<div id='img'>";
                     echo "<img src='uploads/".$row['images']."'>";
                     echo "<p>".$row['txt']."</p>";
-                   echo " <form action='contents.php' method= 'POST'>
+                   echo " <form action='upload_img.php' method= 'POST'>
                     <button class='button' type='submit' name='submitdelete' value='".$row['id']."'>Delete</button>
                 </form>";             
                 echo "</div>";

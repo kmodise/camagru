@@ -1,11 +1,11 @@
 <?php
-include('./val.php');
+include('validation.php');
 include('./usermngt.php');
 $retrive = array();
 foreach($_POST as $key => $value)
     $retrive[$key] = $value;
 if ($retrive["email"] && $retrive["name"] && $retrive["username"] && $retrive["password"] && $retrive["submit"]) {
-    $va = new va();
+    $va = new validation();
     if ($va->test_email($retrive['email']) && $va->test_password($retrive['password']) && $va->test_user($retrive['username']))
     {
         echo "f";

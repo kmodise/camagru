@@ -1,13 +1,13 @@
 <?php
 include("connection.php");
-include("val.php");
+include("validation.php");
 include("send_mail.php");
 $password = $_POST['password'];
 $email = $_POST['email'];
 echo "1";
 if ($_POST['submit']){
     echo "2";
-    $update = new va();
+    $update = new validation();
     if(($update->test_password($password))){
         $update->updatePassword($password, $email);
         header("location: login.php");

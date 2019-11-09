@@ -3,10 +3,10 @@
     // ini_set('display_errors', 1);
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
-    include "connection.php";
-    include ('val.php');
+    include ("connection.php");
+    include ('validation.php');
     include 'nev1.php';
-    $bar = new va;
+    $bar = new validation;
     $id = $bar->get_user($_SESSION['userid']);
     $uid = $id[0]['userid'];
     $retrive = array();
@@ -59,7 +59,7 @@
 <body>
     <div>
         <?php
-            include_once('./picdb.php');
+            include_once('pictures_functions.php');
             include_once('commentnlike.php');
             $hold = new commentnlike();
             $arr = new picdb();

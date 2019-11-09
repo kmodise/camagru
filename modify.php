@@ -1,12 +1,12 @@
 <?php
     session_start();   
-    include('./val.php');
+    include('validation.php');
     include('./usermngt.php');
     $retrive = array();
     $play = array();
     foreach($_POST as $key => $value)
         $retrive[$key] = $value;
-    $va = new va();
+    $va = new validation();
     $id = $va->get_user($_SESSION['userid']);
     $uname = $retrive['username'];
     $name = $retrive['name'];
@@ -35,7 +35,7 @@
                 if (!$uname)
                     $uname = $id[0]['username'];
                 if ($email || $name || $uname || $password){
-                    $va = new va();
+                    $va = new validation();
                     if ($va->test_email($retrive['email']) || $va->test_password($retrive['password']) || $va->test_user($retrive['username'])){
 
                         $var = new createuser($email, $name, $uname, $password);
