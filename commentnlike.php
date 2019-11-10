@@ -89,11 +89,11 @@ class commentnlike{
         switch($kind)
         {
             case 'comment':
-                $subject = "Someone commented on your image";
+                $subject = "comment";
                 $message =  "Someone commented on your image\n";
                 break;
             case 'like':
-                $subject = "Someone liked your image";
+                $subject = "liked image";
                 $message =  "Someone liked your image\n";
                 break;
         }

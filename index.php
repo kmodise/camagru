@@ -3,9 +3,10 @@
     // ini_set('display_errors', 1);
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
-    include ("connection.php");
-    include ('validation.php');
-    include 'nev1.php';
+    include("connection.php");
+    include('validation.php');
+    include("email_notify.php");
+    include('nev1.php');
     $bar = new validation;
     $id = $bar->get_user($_SESSION['userid']);
     $uid = $id[0]['userid'];
@@ -20,7 +21,10 @@
             include_once('commentnlike.php');
             $ad = new commentnlike();
             $ad->addcomment($retrive['comment'], $uid, $retrive['userid'], $retrive['imagenu']);
-            $ad->emailcomment($uid, 'comment');
+            if (notification_id($retrive['userid'])){
+                $ad->emailcomment($retrive['userid'], 'comment');
+            }
+            
             unset($ad);
             header('location: index.php');
         }
@@ -31,7 +35,7 @@
             include_once('commentnlike.php');
             $ad = new commentnlike();
             $ad->addlike($uid, $retrive['like'], $retrive['imagenu']);
-            $ad->emailcomment($uid, 'like');
+            $ad->emailcomment($retrive['userid'], 'like');
             unset($ad);
             header('location: index.php');
         }

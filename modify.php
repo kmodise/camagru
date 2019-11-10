@@ -40,7 +40,7 @@
           $stmt->bindParam(":usern", $username);
           $stmt->execute();
           if (notification($username)){
-             mail($_POST['email'],"data update", "u changed youre email", "From: camagru@camagru.com");
+             mail($_POST['email'],"data update", "you changed youre email", "From: camagru@camagru.com");
           }
           echo "email updated you are required to <a href=login.php>login</a> again\n";
         }
