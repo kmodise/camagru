@@ -77,7 +77,7 @@ ini_set('display_errors', 0);
                     $lik = count($hold->getlikes($display[$i]['num']));
                     
                     $holds = $hold->getcomments($display[$i]['num']);
-                    echo '<div id="'.$display[$i]['timess'].'"><button id="'.$display[$i]['timess'].'" onclick="displays('.$display[$i]['num'].','.$display[$i]['timess'].')">comment '.count($holds).'</button>';
+                    echo '<div id="'.$display[$i]['timess'].'"><button hidden id="'.$display[$i]['timess'].'" onclick="displays('.$display[$i]['num'].','.$display[$i]['timess'].')">comment '.count($holds).'</button>';
                     echo '<form action="index.php" method="post"><button id="'.$display[$i]['timess'].'" type="submit" name="like" value="'.$display[$i]['userid'].'">like '.$lik.'</button>';
                     echo '<input type="hidden" name="imagenu" value="'.$display[$i]['num'].'"></form></div><br/>';
 
