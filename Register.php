@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 include('validation.php');
 include('./usermngt.php');
 $retrive = array();
@@ -12,7 +14,6 @@ if ($retrive["email"] && $retrive["name"] && $retrive["username"] && $retrive["p
         $var = new createuser($retrive["email"], $retrive["name"], $retrive["username"], $retrive["password"]);
         $var->tbuser();
         $var->add_user();
-        // header("location: Login.php");
     }
     else {
         echo "Username or Email already exist!";

@@ -1,5 +1,6 @@
 <?php
-        
+        error_reporting(0);
+        ini_set('display_errors', 0);
         echo "<div id='boxNavigation'>";
          echo "<div id='buttons'>";
             if ($_SESSION["userid"])

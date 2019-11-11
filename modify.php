@@ -1,6 +1,7 @@
 <?php
-//ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
   session_start();
+  error_reporting(0);
+ini_set('display_errors', 0);
   include("connection.php");
   include("validation.php");
   include("email_notify.php");

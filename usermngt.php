@@ -1,6 +1,4 @@
 <?php
-// $ccc = New dbhandler extends dbhandler();
-// $ccc->connect();
 include("send_mail.php");
 class createuser{
     private $email;
