@@ -4,6 +4,7 @@
   include("connection.php");
   include("validation.php");
   include("email_notify.php");
+  include('nev1.php');
   $username = $_SESSION['userid'];
   if(isset($_POST['submit_name']))
   {  
@@ -85,12 +86,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="style.css">
   <title>Profile</title>
 </head>
 <body>
-       <div class="information">
-           <h1>update</h1>
+  <div class="box_form">
+       <div>
+           <h1>update info</h1>
        </div>
        <form action="" method="post">
            <div>
@@ -107,5 +109,6 @@
        </div>
    </form>
    </div>
+</div>
 </body>
 </html>

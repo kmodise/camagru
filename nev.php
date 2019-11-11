@@ -5,12 +5,14 @@
 </head>
 <body>
 
-    <div id = "nev"> 
-    <a href="cam.php">cam</a>
-    <a href="upload_img.php">upload</a>
-    <a href="modify.php">edituser</a>
-    <a href="index.php">public</a>
-    <a href="logout.php">logout</a>
+    <div id="boxNavigation">
+    <div id="buttons">
+    <li><a href="cam.php"><h3><font color="red"</font>cam</h3></a></li>
+    <a href="upload_img.php"><h3><font color="red"</font>upload</h3></a>
+    <a href="modify.php"><h3><font color="red"</font>edit profile</h3></a>
+    <a href="logout.php"><h3><font color="red"</font>logout</h3></a>
+    <a href="index.php"><h3><font color="red"</font>home</h3></a>
+    </div>
     </div>
 </body>
 </html>

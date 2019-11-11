@@ -4,6 +4,7 @@
     session_start();
     include_once('validation.php');
     include_once('cam_sticker_merge.php');
+    include('nev1.php');
     if (!$_SESSION['userid'])
         header('Location: login.php');
     $bar = new validation;
@@ -26,6 +27,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Edit</title>
  
 </head>
@@ -37,12 +39,12 @@
             </div>
 
                 <input type="hidden" value="" id="image" name="image">
-            <div class="controller">
+            <div>
                 <button id="snap" type="submit">Capture</button>
                 eyes<input type="radio" id="rad" name="rad" value="eyes">
                 shit<input type="radio" id="rad" name="rad" value="shit">
                 lol<input type="radio" id="rad" name="rad" value="lol">
-            </div>
+            </div><div id="footer"><center><h1><font color="red">camagru &copy</font></h1></center></div>
 
             <canvas id="canvas" width="450" height="450" style="float:left;"></canvas>
         </form>
@@ -61,10 +63,6 @@
             } 
         ?>
         </form>
-    </div>
-        <a href="logout.php">logout.php</a>
-
-    <div>
         <button id="save" style="display: none;">Save</button>
     </div>
     <div id="imagediv">
@@ -105,6 +103,7 @@
             });
 
         </script>
+        
 
 </body>
 </html>

@@ -25,10 +25,11 @@ ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_report
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Profile</title>
 </head>
 <body>
-    <div>
+    <div id='buttons'>
         <?php
             $var = new validation;
             $id = $var->get_user($_SESSION['userid']);
@@ -37,7 +38,6 @@ ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_report
             include_once('pictures_functions.php');
             $arr = new picdb();
             $display = $arr->getalluser($uid);
-          
             $i = 0;
             while($i < count($display))
             {
@@ -51,12 +51,6 @@ ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_report
             
         ?>
     </div>
-    <!-- <div>
-    <a href="cam.php">cam</a>
-    <a href="logout.php">logout</a>
-    <a href="contents.php">upload</a>
-    <a href="modify.php">edituser</a>
-    <a href="index.php">public</a>
-    </div> -->
+    </div><div id="footer"><center><h1><font color="red">camagru &copy</font></h1></center></div>
 </body>
 </html>

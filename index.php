@@ -57,11 +57,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
     <title>Gallery</title>
 
 </head>
 <body>
-    <div>
+    <div id='all'>
         <?php
             include_once('pictures_functions.php');
             include_once('commentnlike.php');
@@ -101,21 +102,6 @@
             unset($hold); 
         ?>
     </div>
-    <!-- <div>
-    <?php
-        if ($_SESSION["userid"])
-        {
-            echo '<a href="gallery.php">Profile</a>';
-            echo '<a href="logout.php">logout</a>';
-            echo '<a href="settings.php">settings</a>';
-        }else
-        {
-            echo '<a href="login.php">login</a> ';
-            echo '<a href="register.php">Register</a>';
-        }
-    ?>
-    
-    </div> -->
     <script>
         function displays($val, $datess)
         {
@@ -131,5 +117,6 @@
                     <?php
                 }?>
         </form>
+        <div id="footer"><center><h1>camagru &copy</h1></center></div>
 </body>
 </html>

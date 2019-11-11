@@ -5,11 +5,11 @@
     session_start();
     include('./usermngt.php');
     include('./validation.php');
+    include('nev1.php');
 
     $va = new validation();
     $id = $va->get_user($_SESSION['userid']);
     if ($_SESSION['userid']){ 
-        echo 'You are logged in as ' .$id[0]['username'] .'<br>';
 
         if (isset($_POST['submit'])) {
             $uid = $id[0]['userid'];
@@ -60,28 +60,22 @@
 }else {
     echo 'You are not Logged in! '."<a href='Login.php'>login here</a><br>";
 }
-
-// if(isset($_POST['submitdelete']))
-// {
-//     $var = new images();
-//     $uid = $id[0]['userid'];
-//     $pid = $_POST['submitdelete'];
-//     $var->deletepost($uid ,$pid);
-// }
-    
 ?> 
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
     <?php
     if ($_SESSION['userid']){
         // echo  "<a href='modify.php'>Edit Profile</a><br>";
         // echo  "<a href='cam.php'>Take a picture</a><br>";
-        echo "<form action='logout.php' method='POST'>
-            <button type='submit' name='logoutsubmit' id='logoutsubmit'>Logout</button>
-        </form>";
+        // echo "<form action='logout.php' method='POST'>
+        //     <button type='submit' name='logoutsubmit' id='logoutsubmit'>Logout</button>
+        // </form>";
     }
     ?>
-        <div>
+        <div class="box_form">
            <?php
 
             if ($_SESSION['userid']){
@@ -92,6 +86,8 @@
             }
             ?> 
         </div>
+        <div id="footer"><center><h1><font color="red">camagru &copy</font></h1></center></div>
+
         <!-- <?php
         $va = new va();
         $id = $va->get_user($_SESSION['userid']);
@@ -108,6 +104,5 @@
             }
         ?> -->
     
-
     </body>    
 </html>

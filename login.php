@@ -60,5 +60,4 @@ include('validation.php');
     </div>
 
 </body>
-
 </html>
