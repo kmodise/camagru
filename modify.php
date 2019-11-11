@@ -18,7 +18,7 @@ ini_set('display_errors', 0);
             $stmt->bindParam(":usern", $username);
             $stmt->execute();
             if (notification($username)){
-                $data = $valid->get_user($username0);
+                $data = $valid->get_user($username);
                 mail($data[0]['email'],"data update", "you changed youre username", "From: camagru@camagru.com");
              }
             echo "usename updated you are required to <a href=login.php>login</a> again\n";
