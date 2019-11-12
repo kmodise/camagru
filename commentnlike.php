@@ -98,7 +98,7 @@ class commentnlike{
                 break;
         }
         $headers = "Content-type: text\r\n";
-        mail($to,$subject, "someone commented on your picture",$headers);
+        mail($to,$subject, $message,$headers);
 
     }
     public function __destruct(){

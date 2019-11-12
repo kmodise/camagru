@@ -29,4 +29,14 @@
         }
         return false;
     }
+    function get_email_for_username_update($pass){
+        include("connection.php");
+        $sql = 'SELECT * FROM users WHERE username = :uname && passwd = :passwd;';
+        $stmt = $this->conns->prepare($sql);
+        $stmt->bindParam(":uname", $uname);
+        $stmt->bindParam(":passwd", hash("md5",$passwd));
+        $stmt->execute();
+        $rot = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return ($stmt->fetchAll());
+    }
 ?>

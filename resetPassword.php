@@ -43,9 +43,12 @@ if (isset($_POST['reset_password_submit']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+<div id="boxNavigation"><center><h1>camagru account password resset</h1></center></div>
+<div class="box_form">
     <p><?php echo $reponse; ?></p>
     <form action="?vkey=<?php echo $key; ?>" method="POST">
         <label>new password</label><br>
@@ -54,5 +57,8 @@ if (isset($_POST['reset_password_submit']))
         <input type="password" name="password_retype" placeholder="retype password"><br>
         <input type="submit" name="reset_password_submit" value="reset password">
     </form>
+    </div>
+    
+    </div><div id="footer"><center><h1><font color="red">camagru &copy</font></h1></center></div>
 </body>
 </html>

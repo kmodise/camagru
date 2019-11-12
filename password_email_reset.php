@@ -1,6 +1,4 @@
 <?php
-error_reporting(0);
-ini_set('display_errors', 0);
     include("validation.php");
     include("send_mail.php");
     include("connection.php");
@@ -8,9 +6,9 @@ ini_set('display_errors', 0);
         echo "2";
         $email = $_POST['email'];
         if ($email){
-            $valid = new va();
+            $valid = new validation();
             echo "3";
-            if ($valid->email_verified($email)){
+           // if ($valid->test_email($email)){
                 $vkey = md5(time());
                 $mail = new send_mail("$email","<a href=http://localhost:8080/camagru/resetPassword.php?vkey=$vkey>reset password</a>" ,"password reset");
                 $mail->send_mail();
@@ -20,10 +18,10 @@ ini_set('display_errors', 0);
                 $stmt->bindParam(":email", $email);
                 $stmt->execute(); echo 'g';
                 header("location: messages/passMessage.php");
-            }
-           else{
-               echo "email not registered";
-           }
+            //}
+           // else{
+          //      echo "email not registered";
+           // }
         }
         else{
             echo "no email entered";

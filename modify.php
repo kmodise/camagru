@@ -17,11 +17,20 @@ ini_set('display_errors', 0);
             $stmt->bindParam(":uname", $_POST['username']);
             $stmt->bindParam(":usern", $username);
             $stmt->execute();
-            if (notification($username)){
+            if (notification($username) || notification($_POST['username'])){
                 $data = $valid->get_user($username);
-                mail($data[0]['email'],"data update", "you changed youre username", "From: camagru@camagru.com");
+                $data2 = $valid->get_user($_POST['username']);
+                if ($data){
+                   mail($data[0]['email'],"data update", "you changed youre username", "From: camagru@camagru.com");
+                }
+                else if ($data2){
+                  mail($data2[0]['email'],"data update", "you changed youre username", "From: camagru@camagru.com");
+                }
+                else{
+                  echo "something went wrong";
+                }
+                echo "usename updated you are required to <a href=login.php>login</a> again\n";
              }
-            echo "usename updated you are required to <a href=login.php>login</a> again\n";
           }
           catch(PDOexception $e){
               echo "failed: ".$e->getMessage();
