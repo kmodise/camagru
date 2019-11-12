@@ -1,6 +1,6 @@
 <?php
-    include("config.php");
-    $conn->execute("CREATE TABLE `likes` (
+    include("databases.php");
+    $conn->exec("CREATE TABLE `likes` (
         `num` int(11) NOT NULL,
         `userid` int(11) NOT NULL,
         `useridown` int(11) NOT NULL,
