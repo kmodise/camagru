@@ -8,6 +8,16 @@
         `imagenu` int(11) NOT NULL
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
       
+      CREATE TABLE `comments` (
+  `num` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `useridown` int(11) NOT NULL,
+  `comment` varchar(10000) NOT NULL,
+  `timess` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `imagenu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
       CREATE TABLE `tempsave` (
         `images` longblob NOT NULL
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
