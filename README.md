@@ -13,4 +13,4 @@ Camgru is a website that allows users to post pictures for other users to view, 
 
 # how to run
 
-Start the apache and mysql servers clone the web application into the (WAMP/MAMP) htdocs folder and put the url http://localhost/matcha/ on your brower
+Start the apache and mysql servers clone the web application into the (WAMP/MAMP) htdocs folder and put the url http://localhost/camagru on your brower
